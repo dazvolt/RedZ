@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+	<title>RedZ - симулятор выживания в условиях зомби-апокалипсиса</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link href="css/styles.css" rel="stylesheet">
+	<script src="js/framework/jquery-2.1.1.js"></script>
+	<script src="js/framework/jquery-ui-1.11.1.js"></script>
+	<script src="js/framework/chance.min.js"></script>
+	<script src="js/_data.js"></script>
+	<script src="js/_loot_table.js"></script>
+	<script src="js/_text.js"></script>
+	<script src="js/_location.js"></script>
+	<script src="js/_items.js"></script>
+	<script src="js/_inventory.js"></script>
+	<script src="js/_item.js"></script>
+	<script src="js/_log.js"></script>
+	<script src="js/_main.js"></script>
+	<script src="js/_stat.js"></script>
+	<script src="js/_path.js"></script>
+	<script src="js/_cprompt.js"></script>
+	<script src="js/_actions.js"></script>
+	<script src="js/_worker.js"></script>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+	<header class="header">
+		<div class="title" style="//visibility: hidden;">RedZ</div>
+	</header><!-- .header-->
+
+	<main class="content">
+		<div class="path-chooser-container">
+			<div class="path-title-choose">Выберите свой класс:</div>
+			<div class="container path-choose">
+				<div class="path-item" data-path="stealth" data-path-id="1">
+					<div class="path-title">Охотник</div>
+					<div class="path-image"><i class="fa fa-binoculars" aria-hidden="true"></i></div>
+					<div class="path-desc">Ловкость и Скорость</div>
+				</div>
+				<div class="path-item" data-path="soldier" data-path-id="2">
+					<div class="path-title">Штурмовик</div>
+					<div class="path-image"><i class="fa fa-male" aria-hidden="true"></i></div>
+					<div class="path-desc">Сила и Зашита</div>
+				</div>
+				<div class="path-item" data-path="medic" data-path-id="3">
+					<div class="path-title">Медик</div>
+					<div class="path-image"><i class="fa fa-plus" aria-hidden="true"></i></div>
+					<div class="path-desc">Интеллект и Восприятие</div>
+				</div>
+			</div>
+		</div>
+		<div class="main-game-window" style="display: none;">
+			<div class="row">
+				<div class="window with-title hero-stat">
+					<div class="title">Характеристики:</div>
+					<div class="stat-row">
+						<div class="stat-name" data-stat-type="agility">Ловкость:</div>
+						<div class="stat-value" data-stat-value-type="agility">0</div>
+					</div>
+					<div class="stat-row">
+						<div class="stat-name" data-stat-type="speed">Скорость:</div>
+						<div class="stat-value" data-stat-value-type="speed">0</div>
+					</div>
+					<div class="stat-row">
+						<div class="stat-name" data-stat-type="power">Сила:</div>
+						<div class="stat-value" data-stat-value-type="power">0</div>
+					</div>
+					<div class="stat-row">
+						<div class="stat-name" data-stat-type="defense">Защита:</div>
+						<div class="stat-value" data-stat-value-type="defense">0</div>
+					</div>
+					<div class="stat-row">
+						<div class="stat-name" data-stat-type="intelligence">Интеллект:</div>
+						<div class="stat-value" data-stat-value-type="intelligence">0</div>
+					</div>
+					<div class="stat-row">
+						<div class="stat-name" data-stat-type="perception">Восприятие:</div>
+						<div class="stat-value" data-stat-value-type="perception">0</div>
+					</div>
+					<div class="stat-row">
+						<div class="stat-name" data-stat-type="luck">Удача:</div>
+						<div class="stat-value" data-stat-value-type="luck">0</div>
+					</div>
+					<div class="stat-row">
+						<div class="stat-name" data-stat-type="hunger">Голод:</div>
+						<div class="stat-progress hunger" data-stat-progress-type="hunger">
+							<div class="stat-progress-bar"></div>
+						</div>
+					</div>
+					<div class="stat-row">
+						<div class="stat-name" data-stat-type="thirst">Жажда:</div>
+						<div class="stat-progress thirst" data-stat-progress-type="thirst">
+							<div class="stat-progress-bar"></div>
+						</div>
+					</div>
+					<div class="stat-row">
+						<div class="stat-name" data-stat-type="tired">Усталость:</div>
+						<div class="stat-progress tired" data-stat-progress-type="tired">
+							<div class="stat-progress-bar"></div>
+						</div>
+					</div>
+					<div class="stat-row">
+						<div class="stat-name" data-stat-type="blood">Кровь:</div>
+						<div class="stat-progress blood" data-stat-progress-type="blood">
+							<div class="stat-progress-bar"></div>
+						</div>
+					</div>
+				</div>
+				<div class="window hero-interact with-title">
+					<div class="title">День: <span class="days-gone">0</span></div>
+					<div class="interaction-text">
+						Вы вышли на широкую поляну. Вокруг нет ничего кроме леса. Врагов поблиости не наблюдается. Звук в отделании говорит о том, что рядом есть работающий завод.
+					</div>
+					<div class="interaction-actions">
+						<div class="buttons-row non-combat">
+							<button class="button action-button" data-action-type="sleep">Отдыхать/Спать</button>
+							<button class="button action-button" data-action-type="search">Искать вокруг</button>
+						</div>
+						<div class="buttons-row non-combat">
+							<button class="button action-button" data-action-type="leave">Уйти из <span class="name"></span></button>
+							<button class="button action-button" data-action-type="move">Идти по <span class="name"></span></button>
+						</div>
+						<div class="buttons-row combat">
+							<button class="button action-button" data-action-type="fight_melee">Сражаться (<span class="melee-name"></span>)</button>
+							<button class="button action-button" data-action-type="fight_gun">Стрелять (<span class="gun-name"></span>)</button>
+						</div>
+						<div class="buttons-row combat">
+							<button class="button action-button" data-action-type="run_away">Убегать</button>
+							<button class="button action-button" data-action-type="stay">Тихо стоять</button>
+						</div>
+					</div>
+				</div>
+				<div class="window with-title hero-inventory">
+					<div class="title">Инвентарь:</div>
+					<div class="inventory-container">
+
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="window with-title hero-log">
+					<div class="title">Хроника:</div>
+					<div class="chronic-text">
+					</div>
+				</div>
+			</div>
+		</div>
+	</main><!-- .content -->
+
+	<footer class="footer">
+	</footer><!-- .footer -->
+
+</div><!-- .wrapper -->
+
+<div class="context-menu window" style="display: none;">
+</div>
+
+<div class="information window" style="display: none;">
+	<div class="title">
+		<div class="title-text">Хлебушек</div>
+		<div class="close"><i class="fa fa-window-close" aria-hidden="true"></i></div>
+	</div>
+	<div class="text"></div>
+</div>
+
+<div class="overlay" style="display: none"></div>
+<div class="cprompt window" style="display: none">
+	<div class="c-text">бла бла подтвердите</div>
+	<div class="c-field"><input id="c-field" /></div>
+	<div class="c-actions">
+		<button class="c-action button confirm">Подтвердить</button>
+	</div>
+</div>
+
+</body>
+</html>

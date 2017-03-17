@@ -1,0 +1,413 @@
+.button {
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  border: 1px solid #868686;
+  background: rgba(101, 101, 101, 0.8);
+  height: 30px;
+  color: rgba(236, 245, 255, 0.8);
+  font: 14px "Exo 2";
+  padding: 0px 15px 0px 15px;
+  position: relative;
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 0.9;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.44);
+
+  &:active,
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    background: #549c00;
+    color: rgba(248, 247, 255, 0.8);
+    border: 1px solid #6aba00;
+  }
+}
+
+.main-game-window {
+  width: 1024px;
+  margin: 0 auto;
+  margin-top: 60px;
+
+  .row {
+    & > .window {
+      min-height: 200px;
+    }
+  }
+
+  .row {
+    & > div {
+      float: left;
+    }
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  .hero-stat {
+    width: 300px;
+    padding-top: 30px !important;
+
+    .stat-row {
+      display: flex;
+      font-size: 14px;
+      font-family: 'Russo One';
+      color: #fff;
+      position: relative;
+
+      &:last-child {
+        margin-bottom: 10px;
+      }
+
+      .stat-name {
+        padding-left: 10px;
+        color: rgba(255, 251, 247, 0.74);
+      }
+
+      .stat-value {
+        position: absolute;
+        left: 180px;
+        top: 0;
+      }
+
+      .stat-progress {
+        width: 100px;
+        position: absolute;
+        left: 180px;
+        top: 2px;
+        height: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.31);
+
+        &.hunger {
+          .stat-progress-bar {
+            background: rgba(54, 197, 75, 1);
+            box-shadow: 0px 0px 10px #32f524;
+          }
+        }
+        &.thirst {
+          .stat-progress-bar {
+            background: rgba(0, 164, 255, 0.69);
+            box-shadow: 0px 0px 10px #00d1ff;
+          }
+        }
+        &.blood {
+          .stat-progress-bar {
+            background: #e60b18;
+            box-shadow: 0px 0px 10px #ff1a1a;
+          }
+        }
+        &.tired {
+          .stat-progress-bar {
+            background: rgba(255, 223, 0, 0.69);
+            box-shadow: 0px 0px 10px #ffe112;
+          }
+        }
+
+        .stat-progress-bar {
+          width: 40%;
+          position: absolute;
+          height: 8px;
+          top: 1px;
+          background: rgba(218, 218, 218, 0.69);
+
+        }
+      }
+    }
+  }
+
+  .hero-interact {
+    width: 360px;
+
+    .interaction-text {
+      color: rgba(255, 255, 255, 0.67);
+      font-size: 14px;
+      margin: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.51);
+      padding: 12px;
+      font-family: 'Exo 2';
+      font-weight: 300;
+    }
+
+    .interaction-actions {
+      width: 100%;
+      align-content: center;
+      align-items: center;
+      margin-bottom: 12px;
+
+      .button {
+        margin: 0 12px;
+        margin-bottom: 20px;
+        font-size: 13px;
+      }
+    }
+  }
+
+  .hero-inventory {
+    width: 302px;
+
+    .inventory-container {
+      width: 300px; //5
+      height: 180px; //3
+
+      &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      .inventory-cell {
+        height: 60px;
+        width: 60px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.48);
+        border-right: 1px solid rgba(255, 255, 255, 0.48);
+        box-sizing: border-box;
+        float: left;
+        box-shadow: inset 0 0 25px black;
+
+        &:nth-child(5n + 1) {
+          border-left: 1px solid rgba(255, 255, 255, 0.48);
+        }
+
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(5) {
+          border-top: 1px solid rgba(255, 255, 255, 0.48);
+        }
+      }
+    }
+  }
+
+  .hero-log {
+    width: 1000px;
+
+    .chronic-text {
+      margin: 12px;
+      color: rgba(255, 255, 255, 0.63);
+      font-size: 14px;
+      font-family: 'Exo 2';
+      font-weight: 300;
+	  height: 200px;
+	  overflow: auto;
+    }
+  }
+}
+
+.window {
+  background: $bg-1;
+  border: 1px solid $border;
+  transition: 1s;
+  box-sizing: border-box;
+  position: relative;
+  margin: 20px 20px 20px 0;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.44);
+
+  &.with-title {
+    padding-top: 20px;
+  }
+
+  .title {
+    width: 100%;
+    height: 20px;
+    font-size: 12px;
+    font-family: 'Russo One';
+    padding: 0px 5px;
+    box-sizing: border-box;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.51);
+    top: 0;
+    left: 0;
+    background: rgba(82, 80, 80, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 25px black;
+  }
+}
+
+.context-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  transition: 0s;
+
+  button {
+    width: 100%;
+
+
+    &:not(:last-child) {
+      border-bottom: 0;
+    }
+  }
+
+}
+
+.information {
+  position: absolute;
+  width: 250px;
+  min-height: 50px;
+  top: 0;
+  left: 0;
+  transition: 0s;
+
+  .title {
+    width: 100%;
+    height: 20px;
+    font-size: 12px;
+    font-family: 'Russo One';
+    color: #fff;
+    padding-left: 10px;
+  }
+
+  .close {
+    position: absolute;
+    top: 1px;
+    right: 5px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.63);
+    cursor: pointer;
+    transition: 0.5s;
+
+    &:hover {
+      color: red;
+    }
+  }
+
+  .text {
+    padding: 30px 10px 20px 10px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Exo 2';
+    font-weight: 300;
+  }
+
+  .item-tech {
+    img {
+      width: 80px;
+      float: left;
+      margin-right: 10px;
+      margin-bottom: 120px;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.44);
+    }
+
+    font-size: 12px;
+    text-align: left;
+
+    &.pristine {
+      img {
+        opacity: 1;
+        border: 3px solid $q4;
+      }
+    }
+
+    &.bad {
+      img {
+        opacity: 0.65;
+        border: 3px solid $q2;
+      }
+    }
+
+    &.awful {
+      img {
+        opacity: 0.5;
+        border: 3px solid $q1;
+      }
+    }
+
+    &.good {
+      img {
+        opacity: 0.8;
+        border: 3px solid $q3;
+      }
+    }
+  }
+
+  .item-desc {
+    font-size: 10px;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.77);
+    text-align: right;
+    font-family: 'Exo 2';
+    font-weight: 300;
+  }
+
+  .item-quality {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 5px;
+
+    &[data-type="pristine"] {
+      color: $q4;
+    }
+    &[data-type="good"] {
+      color: $q3;
+    }
+    &[data-type="bad"] {
+      color: $q2;
+    }
+    &[data-type="awful"] {
+      color: $q1;
+    }
+  }
+}
+
+.overlay {
+  background: rgba(0,0,0,0.7);
+  z-index: 9998;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.cprompt {
+  position: fixed;
+  margin-left: -200px;
+  margin-top: -100px;
+  left: 50%;
+  top: 50%;
+  z-index: 9999;
+  min-height: 150px;
+  width: 400px;
+  padding: 20px;
+
+  .c-text {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-family: 'Exo 2';
+  }
+
+  .c-field {
+    input {
+      width: 100%;
+      height: 30px;
+      padding: 0 10px;
+      box-sizing: border-box;
+      background: rgba(68, 67, 67, 0.8);
+      border: 1px solid #757575;
+      color: #fff;
+      font-family: 'Exo 2';
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.44);
+
+      &:active,
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+
+  .c-actions {
+    text-align: center;
+    margin-top: 20px;
+  }
+}

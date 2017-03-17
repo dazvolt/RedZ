@@ -1,0 +1,127 @@
+.inventory-container {
+  .inventory-cell {
+    position: relative;
+
+    .count {
+      width: 11px;
+      height: 11px;
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      font-size: 12px;
+      text-align: center;
+      color: #fff;
+      top: 0;
+      left: 0;
+      line-height: 1;
+      background: rgba(93, 93, 93, 1);
+    }
+
+    &[data-quality] {
+      &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 10px 10px;
+        border-color: transparent transparent #007bff transparent;
+        bottom: 0;
+        right: 0;
+      }
+    }
+    &[data-quality="0"] {
+      &:after {
+        border-color: transparent transparent $q1 transparent;
+      }
+    }
+    &[data-quality="1"] {
+      &:after {
+        border-color: transparent transparent $q2 transparent;
+      }
+    }
+    &[data-quality="2"] {
+      &:after {
+        border-color: transparent transparent $q3 transparent;
+      }
+    }
+    &[data-quality="3"] {
+      &:after {
+        border-color: transparent transparent $q4 transparent;
+      }
+    }
+
+    &.empty {
+      background: rgba(0, 0, 0, 0.5);
+
+      .count {
+        display: none;
+      }
+    }
+
+    &.pistol {
+      background: url(../img/items/pistol.png) center center;
+      background-size: contain;
+    }
+
+    &.water {
+      background: url(../img/items/water.png) center center;
+      background-size: contain;
+    }
+
+    &.carrot {
+      background: url(../img/items/carrot.png) center center;
+      background-size: contain;
+    }
+
+    &.backpack {
+      background: url(../img/items/backpack.png) center center;
+      background-size: contain;
+    }
+
+    &.pouch {
+      background: url(../img/items/pouch.png) center center;
+      background-size: contain;
+    }
+
+    &.bag {
+      background: url(../img/items/bag.png) center center;
+      background-size: contain;
+    }
+
+    &.baton {
+      background: url(../img/items/baton.png) center center;
+      background-size: contain;
+    }
+
+    &.bread {
+      background: url(../img/items/bread.png) center center;
+      background-size: contain;
+    }
+
+    &.milk {
+      background: url(../img/items/milk.png) center center;
+      background-size: contain;
+    }
+
+    &.apple {
+      background: url(../img/items/apple.png) center center;
+      background-size: contain;
+    }
+
+    &.medkit {
+      background: url(../img/items/medkit.png) center center;
+      background-size: contain;
+    }
+
+    &.pills {
+      background: url(../img/items/pills.png) center center;
+      background-size: contain;
+    }
+
+    &.strawberry {
+      background: url(../img/items/strawberry.png) center center;
+      background-size: contain;
+    }
+
+  }
+}
