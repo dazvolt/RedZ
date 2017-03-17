@@ -4,46 +4,52 @@ var player_class = {
         id: '2',
         name: 'soldier',
         name_loc: 'Штурмовик',
+        icon: '',
+        class_desc: 'Защита и Сила',
         stat: {
             agility: 3,
             speed: 4,
             power: 7,
-            defense: 7,
+            defense: 8,
             intelligence: 3,
             perception: 3,
             luck: 3
         },
-        inventory_slots: 8,
+        inventory_slots: 10,
         inventory: [[6, 1, 1], [0, 2, 1], [7, 1, 2], [3, 1, 3]]
     },
     medic: {
         id: '3',
         name: 'medic',
+        icon: '',
+        class_desc: 'Интеллект и Восприятие',
         name_loc: 'Медик',
         stat: {
-            agility: 4,
+            agility: 3,
             speed: 3,
             power: 3,
-            defense: 5,
-            intelligence: 8,
-            perception: 7,
+            defense: 3,
+            intelligence: 7,
+            perception: 8,
             luck: 4
         },
-        inventory_slots: 8,
+        inventory_slots: 6,
         inventory: [[0, 3, 3], [7, 1, 3], [4, 1, 3], [9, 1, 2], [10, 1, 3]]
     },
     hunter: {
         id: '1',
         name: 'hunter',
+        icon: '',
+        class_desc: 'Ловкость и Скорость',
         name_loc: 'Охотник',
         stat: {
-            agility: 8,
-            speed: 7,
-            power: 5,
+            agility: 7,
+            speed: 8,
+            power: 3,
             defense: 3,
-            intelligence: 4,
-            perception: 5,
-            luck: 4
+            intelligence: 3,
+            perception: 4,
+            luck: 3
         },
         inventory_slots: 8,
         inventory: [[0, 2, 3], [7, 2, 3], [1, 1, 0], [5, 1, 2]]

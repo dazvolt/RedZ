@@ -1464,19 +1464,18 @@ body { font: 12px/18px Arial, sans-serif; background: url(../img/backgrounds/vil
 -----------------------------------------------------------------------------*/
 .footer { height: 0px; }
 
-.path-title-choose { text-align: center; font-size: 36px; color: #fff; font-family: 'Exo 2'; margin-top: 80px; }
-
-.path-choose { display: flex; margin-top: 60px; align-items: center; }
-.path-choose .path-item { width: 250px; height: 350px; background: rgba(43, 43, 43, 0.8); border: 1px solid #565656; margin: 0 50px; cursor: pointer; padding: 0 20px; transition: 1s; box-sizing: border-box; position: relative; box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.44); }
-.path-choose .path-item:hover { background: rgba(156, 156, 156, 0.8); border: 1px solid #d6d6d6; padding: 6px 20px 0px 20px; outline: 25px solid rgba(255, 255, 255, 0.2); }
-.path-choose .path-item:hover .path-bg { opacity: 0.1; }
-.path-choose .path-item:hover .path-title { color: white; text-shadow: red 1px 1px 40px; }
-.path-choose .path-item:hover i { font-size: 50px; opacity: 1; }
-.path-choose .path-item:hover .path-desc { font-size: 18px; }
-.path-choose .path-item .path-title { color: rgba(255, 255, 255, 0.8); font-family: 'Rubik Mono One'; font-size: 24px; text-align: center; text-transform: uppercase; margin-top: 70px; margin-bottom: 40px; }
-.path-choose .path-item .path-image { width: 50px; height: 50px; margin: 0 auto; border: 1px solid rgba(255, 255, 255, 0.3); font-size: 48px; color: #fff; text-align: center; padding: 20px; }
-.path-choose .path-item .path-image i { transition: 0.5s; opacity: 0.5; }
-.path-choose .path-item .path-desc { color: white; font-family: 'Exo 2'; font-size: 16px; text-align: center; text-transform: uppercase; font-weight: 700; margin-top: 40px; }
+.path-chooser-container .path-title-choose { text-align: center; font-size: 36px; color: #fff; font-family: 'Exo 2'; margin-top: 80px; text-shadow: 0px 0px 10px #000; }
+.path-chooser-container .path-choose { align-items: center; margin: 60px auto 0; width: 350px; }
+.path-chooser-container .path-choose .path-item { width: 350px; height: 50px; background: rgba(43, 43, 43, 0.8); border: 1px solid #565656; margin: 30px 0; cursor: pointer; padding: 0 20px; transition: 1s; box-sizing: border-box; position: relative; box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.44); }
+.path-chooser-container .path-choose .path-item:hover { background: rgba(156, 156, 156, 0.8); border: 1px solid #d6d6d6; padding: 6px 20px 0px 20px; outline: 25px solid rgba(255, 255, 255, 0.2); }
+.path-chooser-container .path-choose .path-item:hover .path-bg { opacity: 0.1; }
+.path-chooser-container .path-choose .path-item:hover .path-title { color: white; text-shadow: red 1px 1px 40px; display: none; }
+.path-chooser-container .path-choose .path-item:hover i { font-size: 50px; opacity: 1; }
+.path-chooser-container .path-choose .path-item:hover .path-desc { font-size: 18px; display: block; }
+.path-chooser-container .path-choose .path-item .path-title { color: rgba(255, 255, 255, 0.8); font-family: 'Rubik Mono One'; font-size: 24px; text-align: center; text-transform: uppercase; margin-top: 16px; }
+.path-chooser-container .path-choose .path-item .path-image { width: 50px; height: 50px; margin: 0 auto; border: 1px solid rgba(255, 255, 255, 0.3); font-size: 48px; color: #fff; text-align: center; padding: 20px; display: none; }
+.path-chooser-container .path-choose .path-item .path-image i { transition: 0.5s; opacity: 0.5; }
+.path-chooser-container .path-choose .path-item .path-desc { color: white; font-family: 'Exo 2'; font-size: 16px; text-align: center; text-transform: uppercase; font-weight: 700; margin-top: 9px; display: none; }
 
 .button { -moz-transition: all 0.5s; -webkit-transition: all 0.5s; -o-transition: all 0.5s; transition: all 0.5s; border: 1px solid #868686; background: rgba(101, 101, 101, 0.8); height: 30px; color: rgba(236, 245, 255, 0.8); font: 14px "Exo 2"; padding: 0px 15px 0px 15px; position: relative; cursor: pointer; font-weight: 600; line-height: 0.9; box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.44); }
 .button:active, .button:focus { outline: 0; }

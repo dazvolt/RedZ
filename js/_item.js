@@ -115,7 +115,7 @@ $.widget('custom.controllerItem', {
         }
 
         if (itemID == 10) { //pills
-
+            $('body').controllerStat('changeViStat', 'blood', parseInt(1 * determineMultiplier), '-');
         }
         if (itemID == 11) { //medkit
             $('body').controllerStat('changeViStat', 'blood', parseInt(1000 * determineMultiplier), '+');

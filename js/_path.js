@@ -6,7 +6,14 @@ $.widget('custom.controllerPath', {
     },
 
     _init: function () {
+        this._generatePath();
         this._choosePathController();
+    },
+    
+    _generatePath: function () {
+        for (var key in player_class) {
+            $('.path-choose').append('<div class="path-item" data-path="'+key+'" data-path-id="'+player_class[key].id+'"><div class="path-title">'+player_class[key].name_loc+'</div><div class="path-image"><i class="fa fa-'+player_class[key].icon+'" aria-hidden="true"></i></div><div class="path-desc">'+player_class[key].class_desc+'</div></div>');
+        }
     },
 
     _choosePathController: function () {

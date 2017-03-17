@@ -8,8 +8,12 @@ $.widget('custom.cprompt', {
         
     },
     
-    call: function (text, callback, input, buttonName) {
+    call: function (text, callback, input, buttonName, opacity) {
         var self = this;
+
+        if (opacity) {
+            $('.overlay').css('background', 'rgba(0,0,0, '+opacity+')');
+        }
 
         $('.overlay').fadeIn();
         $(this.options.class_menu).fadeIn();

@@ -1,88 +1,95 @@
-.path-title-choose {
-  text-align: center;
-  font-size: 36px;
-  color: #fff;
-  font-family: 'Exo 2';
-  margin-top: 80px;
-}
+.path-chooser-container {
 
-.path-choose {
-  display: flex;
-  margin-top: 60px;
-  align-items: center;
+  .path-title-choose {
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+    font-family: 'Exo 2';
+    margin-top: 80px;
+    text-shadow: 0px 0px 10px #000;
+  }
 
-  .path-item {
-    width: 250px;
-    height: 350px;
-    background: $bg-1;
-    border: 1px solid $border;
-    margin: 0 50px;
-    cursor: pointer;
-    padding: 0 20px;
-    transition: 1s;
-    box-sizing: border-box;
-    position: relative;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.44);
+  .path-choose {
+    align-items: center;
+    margin: 60px auto 0;
+    width: 350px;
 
-    &:hover {
-      background: rgba(156, 156, 156, 0.8);
-      border: 1px solid #d6d6d6;
-      padding: 6px 20px 0px 20px;
-      outline: 25px solid rgba(255,255,255,0.2);
+    .path-item {
+      width: 350px;
+      height: 50px;
+      background: $bg-1;
+      border: 1px solid $border;
+      margin: 30px 0;
+      cursor: pointer;
+      padding: 0 20px;
+      transition: 1s;
+      box-sizing: border-box;
+      position: relative;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.44);
 
-      .path-bg {
-        opacity: 0.1;
+      &:hover {
+        background: rgba(156, 156, 156, 0.8);
+        border: 1px solid #d6d6d6;
+        padding: 6px 20px 0px 20px;
+        outline: 25px solid rgba(255,255,255,0.2);
+
+        .path-bg {
+          opacity: 0.1;
+        }
+
+        .path-title {
+          color: white;
+          text-shadow: red 1px 1px 40px;
+          display: none;
+        }
+
+        i {
+          font-size: 50px;
+          opacity: 1;
+        }
+
+        .path-desc {
+          font-size: 18px;
+          display: block;
+        }
       }
 
       .path-title {
-        color: white;
-        text-shadow: red 1px 1px 40px;
+        color: rgba(255,255,255,0.8);
+        font-family: 'Rubik Mono One';
+        font-size: 24px;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 16px;
       }
 
-      i {
-        font-size: 50px;
-        opacity: 1;
+      .path-image {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto;
+        border: 1px solid rgba(255,255,255,0.3);
+        font-size: 48px;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        display: none;
+
+        i {
+          transition: 0.5s;
+          opacity: 0.5;
+        }
       }
 
       .path-desc {
-        font-size: 18px;
+        color: rgba(255,255,255,1);
+        font-family: 'Exo 2';
+        font-size: 16px;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-top: 9px;
+        display: none;
       }
-    }
-
-    .path-title {
-      color: rgba(255,255,255,0.8);
-      font-family: 'Rubik Mono One';
-      font-size: 24px;
-      text-align: center;
-      text-transform: uppercase;
-      margin-top: 70px;
-      margin-bottom: 40px;
-    }
-
-    .path-image {
-      width: 50px;
-      height: 50px;
-      margin: 0 auto;
-      border: 1px solid rgba(255,255,255,0.3);
-      font-size: 48px;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-
-      i {
-        transition: 0.5s;
-        opacity: 0.5;
-      }
-    }
-
-    .path-desc {
-      color: rgba(255,255,255,1);
-      font-family: 'Exo 2';
-      font-size: 16px;
-      text-align: center;
-      text-transform: uppercase;
-      font-weight: 700;
-      margin-top: 40px;
     }
   }
 }

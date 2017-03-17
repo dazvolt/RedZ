@@ -28,6 +28,6 @@ $.widget('custom.controllerMainGame', {
         this.closeMainGameWindow();
             $('body').cprompt('call', randomArray(player_death).replace(/%player_name%/g, player_data.name) + ' <br />Выжил: ' + day + ' дней. <br />Итоговый счет: ' + player_data.score + '<br />Играл за класс: ' + player_data.player_class_name, function () {
                 location.reload();
-            }, false, 'Начать заново');
+            }, false, 'Начать заново', 1);
     }
 });
