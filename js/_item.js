@@ -133,7 +133,10 @@ $.widget('custom.controllerItem', {
                 .controllerStat('changeViStat', 'tired', parseInt(1 * determineMultiplier), '-');
         }
         if (itemID == 14) { //baseball bat
-
+            player_data.equip.meleeWeapon = {
+                name: 'Бейсбольная бита',
+                name_translate: 'bat'
+            };
         }
         if (itemID == 15) { //batteries
 
@@ -148,7 +151,10 @@ $.widget('custom.controllerItem', {
 
         }
         if (itemID == 18) { //boltcutter
-
+            player_data.equip.meleeWeapon = {
+                name: 'Болторез',
+                name_translate: 'boltcutter'
+            };
         }
         if (itemID == 19) { //paperknife
 
@@ -157,7 +163,10 @@ $.widget('custom.controllerItem', {
 
         }
         if (itemID == 21) { //chainsaw
-
+            player_data.equip.meleeWeapon = {
+                name: 'Бензопила',
+                name_translate: 'chainsaw'
+            };
         }
         if (itemID == 22) { //cheese
             $('body').controllerStat('changeViStat', 'blood', parseInt(100 * determineMultiplier), '+')
@@ -178,13 +187,22 @@ $.widget('custom.controllerItem', {
                 .controllerStat('changeViStat', 'tired', parseInt(25 * determineMultiplier), '-');
         }
         if (itemID == 25) { //hammer
-
+            player_data.equip.meleeWeapon = {
+                name: 'Молоток',
+                name_translate: 'hammer'
+            };
         }
         if (itemID == 26) { //crowbar
-
+            player_data.equip.meleeWeapon = {
+                name: 'Монтировка',
+                name_translate: 'crowbar'
+            };
         }
         if (itemID == 27) { //famas
-
+            player_data.equip.primaryWeapon = {
+                name: 'Famas',
+                name_translate: 'famas'
+            };
         }
         if (itemID == 28) { //flashlight
             if (!player_data.equip.flashlight) {
@@ -200,7 +218,7 @@ $.widget('custom.controllerItem', {
         if (itemID == 30) { //grenade
 
         }
-        if (itemID == 31) { //saw
+        if (itemID == 31) { //handsaw
 
         }
         if (itemID == 32) { //gaika
@@ -221,7 +239,10 @@ $.widget('custom.controllerItem', {
 
         }
         if (itemID == 36) { //enfield
-
+            player_data.equip.primaryWeapon = {
+                name: 'Li Enfield',
+                name_translate: 'enfield'
+            };
         }
         if (itemID == 37) { //bulb
 
@@ -230,7 +251,10 @@ $.widget('custom.controllerItem', {
 
         }
         if (itemID == 39) { //wrench
-
+            player_data.equip.meleeWeapon = {
+                name: 'Разводной ключ',
+                name_translate: 'wrench'
+            };
         }
         if (itemID == 40) { //mp5
 
@@ -247,10 +271,16 @@ $.widget('custom.controllerItem', {
             }
         }
         if (itemID == 43) { //revolver
-
+            player_data.equip.secondaryWeapon = {
+                name: 'Револьвер',
+                name_translate: 'revolver'
+            };
         }
         if (itemID == 44) { //shotgun
-
+            player_data.equip.primaryWeapon = {
+                name: 'Дробовик',
+                name_translate: 'shotgun'
+            };
         }
         if (itemID == 45) { //shorts
             if (!player_data.equip.shorts) {
@@ -269,13 +299,22 @@ $.widget('custom.controllerItem', {
             }
         }
         if (itemID == 47) { //aug
-
+            player_data.equip.primaryWeapon = {
+                name: 'AUG',
+                name_translate: 'aug'
+            };
         }
         if (itemID == 48) { //tec9
-
+            player_data.equip.secondaryWeapon = {
+                name: 'Tec-9',
+                name_translate: 'tec9'
+            };
         }
         if (itemID == 49) { //spade
-
+            player_data.equip.meleeWeapon = {
+                name: 'Лопата',
+                name_translate: 'spade'
+            };
         }
         if (itemID == 50) { //trousers
             if (!player_data.equip.pants) {
@@ -286,13 +325,22 @@ $.widget('custom.controllerItem', {
             }
         }
         if (itemID == 51) { //UZI
-
+            player_data.equip.secondaryWeapon = {
+                name: 'UZI',
+                name_translate: 'uzi'
+            };
         }
         if (itemID == 52) { //pick
-
+            player_data.equip.meleeWeapon = {
+                name: 'Кирка',
+                name_translate: 'pick'
+            };
         }
         if (itemID == 53) { //axe
-
+            player_data.equip.meleeWeapon = {
+                name: 'Топор',
+                name_translate: 'axe'
+            };
         }
 
         $('body').controllerInventory('reloadUI', player_data.inventory_slots)

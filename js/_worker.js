@@ -3,7 +3,7 @@ var global_debug = false;
 $(document).ready(function () {
     $('body').controllerItem()
         .controllerLog()
-        .controllerPath({skip: true})
+        .controllerPath({skip: false})
         .controllerMainGame()
         .cprompt();
 
